@@ -1,0 +1,53 @@
+<!--
+Element: personal-finance-page
+Author: Dong Duong
+Create: 05/13/2016
+-->
+
+<dom-module id="personal-finance-page">
+  <style>
+
+  .content {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #003263;
+  }
+
+  .display {
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-bottom: 100px;
+  }
+
+  .display1 {
+    color: white;
+  }
+
+  .display2 {
+    color: white;
+  }
+
+  </style>
+
+  <template id="personalFinancePage">
+    <div class="content">
+
+        <div class="display">
+          <h2 class="display1">Personal Finance</h2>
+          <p class="display2">This is the Personal Finance section</p >
+        </div>
+
+      </div>
+  </template>
+  
+  <script>
+  Polymer({
+    is: 'personal-finance-page',
+    
+    properties: {
+
+    }
+  });
+</script>
+</dom-module>

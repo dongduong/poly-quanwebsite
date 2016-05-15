@@ -1,0 +1,53 @@
+<!--
+Element: m-a-page
+Author: Dong Duong
+Create: 03/11/2015
+-->
+
+<dom-module id="m-a-page">
+  <style>
+
+  .content {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #003263;
+  }
+
+  .display {
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-bottom: 100px;
+  }
+
+  .display1 {
+    color: white;
+  }
+
+  .display2 {
+    color: white;
+  }
+
+  </style>
+
+  <template id="MAndAPage">
+    <div class="content">
+
+        <div class="display">
+          <h2 class="display1">M&A</h2>
+          <p class="display2">This is the M&A section</p >
+        </div>
+
+      </div>
+  </template>
+  
+  <script>
+  Polymer({
+    is: 'm-a-page',
+    
+    properties: {
+
+    }
+  });
+</script>
+</dom-module>

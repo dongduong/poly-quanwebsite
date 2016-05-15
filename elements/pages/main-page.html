@@ -1,0 +1,169 @@
+<!--
+Element: main-page
+Author: Dong Duong
+Create: 03/11/2015
+-->
+
+<dom-module id="main-page">
+  <style>
+    :host {
+      display: block;
+      height: 100%;
+    }
+
+    #mainPanel{
+      width: 100%;
+      height: 100%;
+    }
+    
+    .paper-header {
+        height: 60px;
+        font-size: 16px;
+        line-height: 60px;
+        padding-top: 30px;
+        padding-left: 100px;
+        padding-right: 100px;
+        color: white;
+        transition: height 0.2s;
+      }
+
+    .blue .paper-header {
+        background-color: #1e1e1e;
+      }
+
+    .content {
+        height: 100%;
+        /*margin-top: -20px;*/
+      }
+
+    .paper-header.has-shadow  .tabs {
+      margin-left: 50px;
+      margin-bottom: 0;
+    }  
+
+    paper-tab a {
+      text-decoration: none;
+      color: white;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      font-family: 'Roboto', 'Noto', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      min-height: 48px;
+      padding: 0 16px;
+    }
+
+    paper-tab iron-icon {
+      margin-right: 10px;
+      opacity: 0.84;
+    }
+
+  </style>
+
+  <template id="mainPage">
+      <paper-header-panel id="mainPanel" mode="waterfall" class="blue" on-content-scroll="scrollHandler">
+        <div class="paper-header">
+          <div style="float:left">
+            <img style="margin-top: -22px; padding-right: 60px" src="../../images/logo/logo.png">
+          </div>
+          <div>
+              <paper-tabs id="header-tabs" selected="0" noink on-iron-select="onMenuSelect">
+                <paper-tab link>
+                  <a route="home" href="{{urlFor('home')}}">
+                    <span><b>HOME</b></span>
+                  </a>
+                </paper-tab>
+                <paper-tab link>
+                  <a route="secu" href="{{urlFor('securities')}}">
+                    <span><b>SECURITIES</b></span>
+                  </a>
+                </paper-tab>
+                <paper-tab link>
+                  <a route="real" href="{{urlFor('real-estate')}}">
+                    <span><b>REAL ESTATE</b></span>
+                  </a>
+                </paper-tab>
+                <paper-tab link>
+                  <a route="pefi" href="{{urlFor('personal-finance')}}">
+                    <span><b>PERSONAL FINANCE</b></span>
+                  </a>
+                </paper-tab>
+                <paper-tab link>
+                  <a route="stup" href="{{urlFor('start-up')}}">
+                    <span><b>START-UP</b></span>
+                  </a>
+                </paper-tab>
+                <paper-tab link>
+                  <a route="mana" href="{{urlFor('m-and-a')}}">
+                    <span><b>M&A</b></span>
+                  </a>
+                </paper-tab>
+                <paper-tab link>
+                  <a route="cota" href="{{urlFor('contact')}}">
+                    <span><b>CONTACT</b></span>
+                  </a>
+                </paper-tab>
+              </paper-tabs>
+            </div>
+        </div>
+        <div class="content">
+          <more-route-selector>
+              <iron-pages id="content-pages" selected="0">
+                <section route="home">
+                  <home-page></home-page>
+                </section>
+                <section route="secu">
+                  <securities-page></securities-page>
+                </section>
+                <section route="real">
+                  <real-estate-page></real-estate-page>
+                </section>
+                <section route="pefi">
+                  <personal-finance-page></personal-finance-page>
+                </section>
+                <section route="stup">
+                  <start-up-page></start-up-page>
+                </section>
+                <section route="mana">
+                  <m-a-page></m-a-page>
+                </section>
+                <section route="cota">
+                  <contact-page></contact-page>
+                </section>
+              </iron-pages>
+          </more-route-selector>
+        </div> <!-- end content -->
+      </paper-header-panel>
+  </template>
+  
+  <script>
+  Polymer({
+    is: 'main-page',
+    
+    properties: {
+
+    },
+
+    urlFor: function(page) {
+        return MoreRouting.urlFor(page);
+    },
+
+    onMenuSelect: function() {
+      contentPages = document.getElementById("content-pages");
+      headerTabs = document.getElementById("header-tabs");
+      contentPages.selected = headerTabs.selected;
+    }
+
+  });
+</script>
+</dom-module>

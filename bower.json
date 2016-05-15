@@ -1,0 +1,27 @@
+{
+  "name": "Quan website",
+  "authors": [
+    "Dong Duong Hoang <dong.hoang@infodation.vn>"
+  ],
+  "description": "quan website",
+  "main": "index.html",
+  "keywords": [
+    "polymer"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "iron-elements": "PolymerElements/iron-elements#^1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.0",
+    "more-routing": "Polymore/more-routing",
+    "page": "visionmedia/page.js" 
+  }
+}
